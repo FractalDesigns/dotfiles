@@ -765,3 +765,6 @@ $env.config = {
 alias open = xdg-open
 alias vim = nvim
 alias dotfiles = cd ~/code/dotfiles/ 
+alias learning_rust = cd ~/code/learning_rust/
+
+source ~/.local/share/atuin/init.nu
