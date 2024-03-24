@@ -767,4 +767,4 @@ alias vim = nvim
 alias dotfiles = cd ~/code/dotfiles/ 
 alias learning_rust = cd ~/code/learning_rust/
 
-source ~/.local/share/atuin/init.nu
+#source ~/.local/share/atuin/init.nu
