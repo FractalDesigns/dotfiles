@@ -80,3 +80,5 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/nvim-linux64/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/bin')
 $env.EDITOR = "nvim"
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
