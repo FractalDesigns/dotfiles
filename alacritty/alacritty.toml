@@ -21,8 +21,18 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window]
-opacity = 0.95
+opacity = 0.98
 
 [window.padding]
 x = 0
 y = 0
+
+[keyboard]
+# Remap Ctrl+C to copy
+bindings = [{ key = "c", mods = "Alt", action = "Copy" },
+{ key = "v", mods = "Alt", action = "Paste" },
+# Remap Ctrl+Shift+C to interrupt
+#{ key = "c", mods = "Control|Shift",  chars = "\u0003" }
+]
+
+

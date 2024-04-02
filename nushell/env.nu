@@ -79,6 +79,9 @@ $env.NU_PLUGIN_DIRS = [
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/nvim-linux64/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/nvim-linux64/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/.cargo/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
+
 $env.EDITOR = "nvim"
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
