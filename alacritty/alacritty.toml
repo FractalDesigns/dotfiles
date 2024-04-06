@@ -29,10 +29,10 @@ y = 0
 
 [keyboard]
 # Remap Ctrl+C to copy
-bindings = [{ key = "c", mods = "Alt", action = "Copy" },
-{ key = "v", mods = "Alt", action = "Paste" },
+#bindings = [{ key = "c", mods = "Alt", action = "Copy" },
+#{ key = "v", mods = "Alt", action = "Paste" },
 # Remap Ctrl+Shift+C to interrupt
 #{ key = "c", mods = "Control|Shift",  chars = "\u0003" }
-]
+#]
 
 
