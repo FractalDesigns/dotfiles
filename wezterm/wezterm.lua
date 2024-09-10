@@ -20,7 +20,7 @@ local wezterm = require 'wezterm'
 
 return {
 	-- color_scheme = 'termnial.sexy',
-
+  window_close_confirmation = 'NeverPrompt',
   -- default_prog = { 'tmux', 'new', '-s', 'foo', '-c', '~/code/learning_rust/' },
   default_prog = { 'tmux', 'new', '-c', wezterm.home_dir .. '/code/learning_rust/' },
 	color_scheme = 'Catppuccin Mocha',
