@@ -1,5 +1,5 @@
 [shell]
-program = "/home/achraf/.cargo/bin/nu"
+program = "nu"
 
 [font]
 size = 16.0
