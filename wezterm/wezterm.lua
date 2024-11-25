@@ -1,8 +1,9 @@
 local wezterm = require 'wezterm'
 
 return {
+ audible_bell = "Disabled",
  set_environment_variables = {
-  PATH = '/opt/homebrew/bin:/usr/local/bin:' .. os.getenv('PATH')
+  PATH = '/opt/homebrew/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin:' .. os.getenv('PATH')
 },
   window_close_confirmation = 'NeverPrompt',
   default_prog = { 'tmux', 'new', '-c', wezterm.home_dir .. '/code' },
