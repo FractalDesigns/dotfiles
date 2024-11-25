@@ -24,21 +24,33 @@ let _atuin_pre_prompt = {||
         return
     }
     with-env { ATUIN_LOG: error } {
-        do { atuin history end $'--exit=($last_exit)' -- $env.ATUIN_HISTORY_ID | null } | null
+        do { atuin history end $'--exit=($last_exit)' -- $env.ATUIN_HISTORY_ID } | complete
 
     }
     hide-env ATUIN_HISTORY_ID
 }
 
 def _atuin_search_cmd [...flags: string] {
-    let nu_version = ($env.NU_VERSION | split row '.' | each { || into int })
+    let nu_version = do {
+        let version = version
+        let major = $version.major?
+        if $major != null {
+            # These members are only available in versions > 0.92.2
+            [$major $version.minor $version.patch]
+        } else {
+            # So fall back to the slower parsing when they're missing
+            $version.version | split row '.' | into int
+        }
+    }
     [
         $ATUIN_KEYBINDING_TOKEN,
         ([
-            (if $nu_version.0 <= 0 and $nu_version.1 <= 90 { 'commandline' } else { 'commandline edit' }),
-            `(ATUIN_LOG=error run-external --redirect-stderr atuin search`,
-            ($flags | append [--interactive, --] | each {|e| $'"($e)"'}),
-            `(commandline) | complete | $in.stderr | str substring ..-1)`,
+            `with-env { ATUIN_LOG: error, ATUIN_QUERY: (commandline) } {`,
+                (if $nu_version.0 <= 0 and $nu_version.1 <= 90 { 'commandline' } else { 'commandline edit' }),
+                (if $nu_version.1 >= 92 { '(run-external atuin search' } else { '(run-external --redirect-stderr atuin search' }),
+                    ($flags | append [--interactive] | each {|e| $'"($e)"'}),
+                (if $nu_version.1 >= 92 { ' e>| str trim)' } else {' | complete | $in.stderr | str substring ..-1)'}),
+            `}`,
         ] | flatten | str join ' '),
     ] | str join "\n"
 }
