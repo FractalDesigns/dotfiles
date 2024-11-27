@@ -766,6 +766,10 @@ alias v = nvim
 alias dotfiles = cd ~/code/dotfiles/ 
 alias learning_rust = cd ~/code/learning_rust/
 alias j = just
+alias c = clear
+alias cat = bat
+alias l = ls 
+
 source ~/.config/atuin/init.nu
 source ~/.config/zoxide.nu
 use ~/.cache/starship/init.nu
