@@ -13,7 +13,7 @@ return {
 	enable_tab_bar = false,
 	font_size = 16.0,
 	-- font = wezterm.font("JetBrains Mono"),
-	font = wezterm.font("Victor Mono"),
+	font = wezterm.font("Victor Mono"), --installed from https://rubjo.github.io/victor-mono/
 
 	-- font_dirs = { "~/.local/share/fonts/" },
 	macos_window_background_blur = 30,
