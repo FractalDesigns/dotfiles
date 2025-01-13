@@ -769,6 +769,7 @@ alias j = just
 alias c = clear
 alias cat = bat
 alias l = ls 
+alias j = just
 alias wezterm = flatpak run org.wezfurlong.wezterm
 source ~/.config/atuin/init.nu
 source ~/.config/zoxide.nu

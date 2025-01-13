@@ -36,7 +36,7 @@ install-fonts:
         echo "Fonts already linked"
     }
 
-install lazy-vim:
+install-lazy-vim:
         stow -R --target ~/.config/nvim nvim/
 uninstall-nvchad: 
     rm -rf ~/.config/nvim

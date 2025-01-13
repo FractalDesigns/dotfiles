@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 return {
 	font_dirs = { os.getenv("HOME") .. "/.local/share/fonts" },
-	--window_decorations = "None",
+	--	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	audible_bell = "Disabled",
 	set_environment_variables = {
 		PATH = "/opt/homebrew/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin:" .. os.getenv("PATH"),
@@ -14,7 +14,7 @@ return {
 	font_size = 16.0,
 	-- font = wezterm.font("JetBrains Mono"),
 	font = wezterm.font("Victor Mono"), --installed from https://rubjo.github.io/victor-mono/
-
+	warn_about_missing_glyphs = false,
 	-- font_dirs = { "~/.local/share/fonts/" },
 	macos_window_background_blur = 30,
 	window_background_opacity = 1.0,

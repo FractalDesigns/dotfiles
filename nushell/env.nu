@@ -81,7 +81,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/.cargo/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
-
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/.local/bin')
 $env.EDITOR = "nvim"
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
