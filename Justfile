@@ -37,7 +37,7 @@ install-fonts:
     }
 
 install-lazy-vim:
-        stow -R --target ~/.config/nvim nvim/
+	cd nvim && stow --target ~/.config/nvim .
 uninstall-nvchad: 
     rm -rf ~/.config/nvim
     rm -rf ~/.local/state/nvim
