@@ -764,6 +764,7 @@ alias open = xdg-open
 alias vim = nvim
 alias v = nvim
 alias dotfiles = cd ~/code/dotfiles/ 
+alias cd = z
 alias learning_rust = cd ~/code/learning_rust/
 alias j = just
 alias c = clear
