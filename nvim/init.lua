@@ -2,5 +2,7 @@
 require("config.lazy")
 require("config.user_commands")
 require("config.just")
+require("config.lspconfig")
 
 require("dap-python").setup("uv")
+

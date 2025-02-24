@@ -760,11 +760,15 @@ $env.config = {
         }
     ]
 }
+
+source ~/.config/atuin/init.nu
+source ~/.config/zoxide.nu
+use ~/.cache/starship/init.nu
+
 alias open = xdg-open
 alias vim = nvim
 alias v = nvim
 alias dotfiles = cd ~/code/dotfiles/ 
-alias cd = z
 alias learning_rust = cd ~/code/learning_rust/
 alias j = just
 alias c = clear
@@ -773,6 +777,4 @@ alias l = ls
 alias j = just
 alias lg = lazygit
 alias wezterm = flatpak run org.wezfurlong.wezterm
-source ~/.config/atuin/init.nu
-source ~/.config/zoxide.nu
-use ~/.cache/starship/init.nu
+alias cd = z
