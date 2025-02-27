@@ -1,5 +1,0 @@
-execute:
-  echo "hello"
-
-debug:
-  echo "debug"

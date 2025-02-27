@@ -1,28 +1,11 @@
-install: install-nvchad-custom-config
+install: install-fonts 
   stow --target ~/.config .
+  [[ "$OSTYPE" == "darwin"* ]] && stow --target ~/Library/Application\ Support/nushell nushell
   #ln -s ~/.config/git/config ~/.gitconfig
 
-install-nvchad: install-fonts
-    #!/usr/bin/env nu
-    let repo_url = "https://github.com/NvChad/starter"
-    let target_dir =  ($env.HOME | path join ".config/nvim") 
-    
-    if not ($target_dir | path exists) {
-        git clone $repo_url $target_dir
-        echo "Repository cloned successfully."
-    } else {
-        echo "nvim already exist in ~/.config"
-    }
+install-tmux-tpm:
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-install-nvchad-custom-config: install-nvchad 
-    #!/usr/bin/env nu
-    let source_file = ($env.PWD | path join 'nvim/configs/lspconfig.lua')
-    let target_file = ($env.HOME | path join '.config/nvim/lua/configs/lspconfig.lua') 
-    if ($target_file | path exists) {
-       print $target_file
-       rm $target_file
-    }  
-    ln -s $source_file $target_file
 install-fonts:     
     #!/usr/bin/env nu
     mkdir ~/.local/share/fonts
@@ -38,7 +21,7 @@ install-fonts:
 
 install-lazy-vim:
 	cd nvim && stow --target ~/.config/nvim .
-uninstall-nvchad: 
+uninstall-nvim: 
     rm -rf ~/.config/nvim
     rm -rf ~/.local/state/nvim
     rm -rf ~/.local/share/nvim    

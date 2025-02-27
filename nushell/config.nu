@@ -765,7 +765,7 @@ source ~/.config/atuin/init.nu
 source ~/.config/zoxide.nu
 use ~/.cache/starship/init.nu
 
-alias open = xdg-open
+
 alias vim = nvim
 alias v = nvim
 alias dotfiles = cd ~/code/dotfiles/ 

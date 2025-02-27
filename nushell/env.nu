@@ -76,13 +76,20 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/nvim-linux64/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/nvim-linux64/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/programs/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/.cargo/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/achraf/.local/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin') # homebrew path in macos
+
+let home = $env.HOME
+let new_paths = [
+    $'($home)/programs/nvim-linux64/bin'
+    $'($home)/programs/bin'
+    $'($home)/.cargo/bin'
+    '/home/linuxbrew/.linuxbrew/bin'
+    $'($home)/.local/bin'
+    '/opt/homebrew/bin'
+]
+
+$env.PATH = ($new_paths | prepend $env.PATH | uniq)
+
+$env.XDG_CONFIG_HOME = $'($home)/.config'
 $env.EDITOR = "nvim"
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
