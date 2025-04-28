@@ -778,3 +778,5 @@ alias j = just
 alias lg = lazygit
 alias wezterm = flatpak run org.wezfurlong.wezterm
 alias cd = z
+alias neovide = bash -c "neovide &"
+alias nv = neovide

@@ -6,6 +6,33 @@ return {
       local M = {}
 
       -- Create floating terminal
+      -- local function create_floating_terminal(cmd)
+      --   local buf = vim.api.nvim_create_buf(false, true)
+      --   local width = math.floor(vim.o.columns * 0.8)
+      --   local height = math.floor(vim.o.lines * 0.8)
+      --
+      --   local opts = {
+      --     relative = "editor",
+      --     width = width,
+      --     height = height,
+      --     row = math.floor((vim.o.lines - height) / 2),
+      --     col = math.floor((vim.o.columns - width) / 2),
+      --     style = "minimal",
+      --     border = "rounded",
+      --   }
+      --
+      --   local win = vim.api.nvim_open_win(buf, true, opts)
+      --   vim.fn.termopen(cmd, {
+      --     on_exit = function()
+      --       vim.defer_fn(function()
+      --         vim.api.nvim_win_close(win, true)
+      --       end, 2000)
+      --     end,
+      --   })
+      --   vim.cmd("startinsert")
+      -- end
+      --
+
       local function create_floating_terminal(cmd)
         local buf = vim.api.nvim_create_buf(false, true)
         local width = math.floor(vim.o.columns * 0.8)
@@ -22,14 +49,39 @@ return {
         }
 
         local win = vim.api.nvim_open_win(buf, true, opts)
+
+        -- Enable text selection and mouse control
+        vim.opt_local.mouse = "a"
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+        vim.opt_local.signcolumn = "no"
+
+        -- Start terminal with persistent buffer
         vim.fn.termopen(cmd, {
           on_exit = function()
-            vim.defer_fn(function()
-              vim.api.nvim_win_close(win, true)
-            end, 2000)
+            -- Optional: Add visual indication when process exits
+            vim.api.nvim_buf_set_lines(buf, 0, 0, true, { "[Process exited] Press q to close" })
           end,
         })
+
+        -- Key mappings for closing/navigation
+        vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>q!<CR>", { noremap = true, silent = true })
+        vim.api.nvim_buf_set_keymap(buf, "n", "<Esc>", "<cmd>q!<CR>", { noremap = true, silent = true })
+        vim.api.nvim_buf_set_keymap(buf, "t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+
+        -- Auto-enter insert mode for new terminals
         vim.cmd("startinsert")
+
+        -- Setup terminal buffer behaviors
+        vim.api.nvim_create_autocmd("TermClose", {
+          buffer = buf,
+          callback = function()
+            vim.schedule(function()
+              -- Switch to normal mode when process ends
+              vim.cmd("stopinsert")
+            end)
+          end,
+        })
       end
 
       -- Get just recipes
