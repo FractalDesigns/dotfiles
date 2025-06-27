@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "nu"
 
 [font]
@@ -28,11 +28,11 @@ x = 0
 y = 0
 
 [keyboard]
+
+[terminal]
 # Remap Ctrl+C to copy
 #bindings = [{ key = "c", mods = "Alt", action = "Copy" },
 #{ key = "v", mods = "Alt", action = "Paste" },
 # Remap Ctrl+Shift+C to interrupt
 #{ key = "c", mods = "Control|Shift",  chars = "\u0003" }
 #]
-
-
