@@ -780,3 +780,6 @@ alias wezterm = flatpak run org.wezfurlong.wezterm
 alias cd = z
 alias neovide = bash -c "neovide &"
 alias nv = neovide
+alias t = terraform
+alias g = gcloud
+source $"($nu.home-path)/.cargo/env.nu"

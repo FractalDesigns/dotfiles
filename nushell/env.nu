@@ -84,7 +84,9 @@ let new_paths = [
     $'($home)/.cargo/bin'
     '/home/linuxbrew/.linuxbrew/bin'
     $'($home)/.local/bin'
-    '/opt/homebrew/bin'
+    '/opt/homebrew/bin',
+    $'($home)/google-cloud-sdk/bin',
+    $'$($home)/.docker/bin'
 ]
 
 $env.PATH = ($new_paths | prepend $env.PATH | uniq)

@@ -13,7 +13,8 @@ config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin:" .. os.getenv("PATH"),
 }
 config.window_close_confirmation = "NeverPrompt"
-config.default_prog = { "tmux", "new", "-c", wezterm.home_dir .. "/code", "-f", "~/.config/tmux/tmux.conf" }
+-- config.default_prog = { "tmux", "new", "-c", wezterm.home_dir .. "/code", "-f", "~/.config/tmux/tmux.conf" }
+config.default_prog = { "nu" }
 config.color_scheme = "Catppuccin Mocha"
 config.enable_tab_bar = false
 config.font_size = 16.0
