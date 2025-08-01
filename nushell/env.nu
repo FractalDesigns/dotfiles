@@ -86,8 +86,9 @@ let new_paths = [
     $'($home)/.local/bin'
     '/opt/homebrew/bin',
     $'($home)/google-cloud-sdk/bin',
-    $'$($home)/.docker/bin'
+    $'($home)/.docker/bin',
 ]
+
 
 $env.PATH = ($new_paths | prepend $env.PATH | uniq)
 
@@ -95,3 +96,7 @@ $env.XDG_CONFIG_HOME = $'($home)/.config'
 $env.EDITOR = "nvim"
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+$env.GOOGLE_GENAI_USE_VERTEXAI = true
+$env.GOOGLE_CLOUD_PROJECT = "calf-askia-dev-55"
+$env.GOOGLE_CLOUD_LOCATION = "europe-west4"
