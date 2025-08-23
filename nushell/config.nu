@@ -800,4 +800,6 @@ alias  policy = gcloud asset get-effective-iam-policy --resource=//cloudresource
 
 
 source $"($nu.home-path)/.cargo/env.nu"
+
 source ~/.cache/carapace/init.nu
+

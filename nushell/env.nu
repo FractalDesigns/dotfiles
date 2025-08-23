@@ -100,3 +100,9 @@ $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 $env.GOOGLE_GENAI_USE_VERTEXAI = true
 $env.GOOGLE_CLOUD_PROJECT = "calf-askia-dev-55"
 $env.GOOGLE_CLOUD_LOCATION = "europe-west4"
+
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
+
