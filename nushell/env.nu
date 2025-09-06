@@ -99,7 +99,7 @@ mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 $env.GOOGLE_GENAI_USE_VERTEXAI = true
-$env.GOOGLE_CLOUD_PROJECT = "calf-askia-dev-55"
+$env.GOOGLE_CLOUD_PROJECT = "calf-poc-gcp-sbox-aeb6"
 $env.GOOGLE_CLOUD_LOCATION = "europe-west4"
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional

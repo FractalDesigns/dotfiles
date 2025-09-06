@@ -790,7 +790,7 @@ alias .g = gcloud
 # alias gcp_roles = gcloud projects get-iam-policy (gcloud config get-value project) --format=json | from json | get bindings.role | uniq | sort | fzf
 # let me = (gcloud auth list --filter=status:ACTIVE --format="value(account)");
 # alias gcp_my_roles = gcloud projects get-iam-policy (gcloud config get-value project) --format=json | from json | get bindings | where { |binding| $"user:($me)" in $binding.members } | get role | fzf
-# let me = (gcloud auth list --filter=status:ACTIVE --format="value(account)");
+#
 # let project = (gcloud config get-value project);
 # alias  policy = gcloud asset get-effective-iam-policy --resource=//cloudresourcemanager.googleapis.com/projects/($project) --format=json | from json | get policy.bindings | flatten | where { |b| $"user:($me)" in $b.members } | get role | uniq | sort | fzf
 source $"($nu.home-path)/.cargo/env.nu"
