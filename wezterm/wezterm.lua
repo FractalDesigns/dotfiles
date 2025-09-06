@@ -19,9 +19,11 @@ config.color_scheme = "Catppuccin Mocha"
 config.enable_tab_bar = false
 config.font_size = 16.0
 config.font = wezterm.font("Victor Mono")
+
+-- config.font = wezterm.font("OpenDyslexicM Nerd font Mono")
 config.warn_about_missing_glyphs = false
 config.macos_window_background_blur = 30
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.7
 config.keys = {
 	{
 		key = "f",

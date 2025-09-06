@@ -85,6 +85,7 @@ let new_paths = [
     '/home/linuxbrew/.linuxbrew/bin'
     $'($home)/.local/bin'
     '/opt/homebrew/bin',
+    '/opt/homebrew/opt/libpq/bin',
     $'($home)/google-cloud-sdk/bin',
     $'($home)/.docker/bin',
 ]
