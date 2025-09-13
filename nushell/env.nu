@@ -1,6 +1,7 @@
 # Nushell Environment Config File
 #
 # version = "0.85.0"
+use std/util "path add"
 
 def create_left_prompt [] {
     let home =  $nu.home-path
@@ -78,20 +79,17 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
 let home = $env.HOME
-let new_paths = [
-    $'($home)/programs/nvim-linux64/bin'
-    $'($home)/programs/bin'
-    $'($home)/.cargo/bin'
-    '/home/linuxbrew/.linuxbrew/bin'
-    $'($home)/.local/bin'
-    '/opt/homebrew/bin',
-    '/opt/homebrew/opt/libpq/bin',
-    $'($home)/google-cloud-sdk/bin',
-    $'($home)/.docker/bin',
-]
 
-
-$env.PATH = ($new_paths | prepend $env.PATH | uniq)
+path add    $'($home)/programs/nvim-linux64/bin'
+path add   $'($home)/programs/bin'
+path add  $'($home)/.cargo/bin'
+path add  '/home/linuxbrew/.linuxbrew/bin'
+path add   $'($home)/.local/bin'
+path add   '/opt/homebrew/bin'
+path add  '/opt/homebrew/opt/libpq/bin'
+path add $'($home)/google-cloud-sdk/bin'
+path add  $'($home)/.docker/bin'
+path add $"($nu.home-path)/.cargo/bin"
 
 $env.XDG_CONFIG_HOME = $'($home)/.config'
 $env.EDITOR = "nvim"
