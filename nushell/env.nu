@@ -80,16 +80,17 @@ $env.NU_PLUGIN_DIRS = [
 
 let home = $env.HOME
 
-path add    $'($home)/programs/nvim-linux64/bin'
-path add   $'($home)/programs/bin'
-path add  $'($home)/.cargo/bin'
-path add  '/home/linuxbrew/.linuxbrew/bin'
-path add   $'($home)/.local/bin'
-path add   '/opt/homebrew/bin'
-path add  '/opt/homebrew/opt/libpq/bin'
+path add $'($home)/programs/nvim-linux64/bin'
+path add $'($home)/programs/bin'
+path add $'($home)/.cargo/bin'
+path add '/home/linuxbrew/.linuxbrew/bin'
+path add $'($home)/.local/bin'
+path add '/opt/homebrew/bin'
+path add '/opt/homebrew/opt/libpq/bin'
 path add $'($home)/google-cloud-sdk/bin'
-path add  $'($home)/.docker/bin'
+path add '($home)/.docker/bin'
 path add $"($nu.home-path)/.cargo/bin"
+path add $'($home)/.nix-profile/bin/'
 
 $env.XDG_CONFIG_HOME = $'($home)/.config'
 $env.EDITOR = "nvim"
