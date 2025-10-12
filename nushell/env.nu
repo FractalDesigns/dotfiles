@@ -91,6 +91,7 @@ path add $'($home)/google-cloud-sdk/bin'
 path add '($home)/.docker/bin'
 path add $"($nu.home-path)/.cargo/bin"
 path add $'($home)/.nix-profile/bin/'
+path add $"($nu.home-path)/.cargo/bin"
 
 $env.XDG_CONFIG_HOME = $'($home)/.config'
 $env.EDITOR = "nvim"

@@ -793,6 +793,6 @@ alias .g = gcloud
 #
 # let project = (gcloud config get-value project);
 # alias  policy = gcloud asset get-effective-iam-policy --resource=//cloudresourcemanager.googleapis.com/projects/($project) --format=json | from json | get policy.bindings | flatten | where { |b| $"user:($me)" in $b.members } | get role | uniq | sort | fzf
-source $"($nu.home-path)/.cargo/env.nu"
+#source $"($nu.home-path)/.cargo/env.nu"
 source ~/.cache/carapace/init.nu
 
