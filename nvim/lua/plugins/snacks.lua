@@ -17,6 +17,9 @@ return {
         buffers = {
           hidden = true,
         },
+        grep = {
+          hidden = true,
+        },
       },
     },
   },
