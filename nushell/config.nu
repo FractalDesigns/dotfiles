@@ -787,6 +787,10 @@ alias gemini = npx @google/gemini-cli
 alias g = gcloud
 alias glw = glab ci view --web
 alias .g = gcloud
+alias ob_lvmh = cd ~/code/obsidian/lvmh
+alias bro = brew
+alias b = brew
+alias bu = brew upgrade
 # alias gcp_roles = gcloud projects get-iam-policy (gcloud config get-value project) --format=json | from json | get bindings.role | uniq | sort | fzf
 # let me = (gcloud auth list --filter=status:ACTIVE --format="value(account)");
 # alias gcp_my_roles = gcloud projects get-iam-policy (gcloud config get-value project) --format=json | from json | get bindings | where { |binding| $"user:($me)" in $binding.members } | get role | fzf
