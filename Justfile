@@ -1,12 +1,13 @@
-install: #install-fonts 
+install: #install-fonts
   stow --target ~/.config .
+  [[ "$OSTYPE" == "darwin"* ]] && stow --target ~ aerospace
   [[ "$OSTYPE" == "darwin"* ]] && stow --target ~/Library/Application\ Support/nushell nushell
   #ln -s ~/.config/git/config ~/.gitconfig
 
 install-tmux-tpm:
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-install-fonts:     
+install-fonts:
     #!/usr/bin/env nu
     mkdir ~/.local/share/fonts
     # let repo_url = "https://github.com/NvChad/starter"
@@ -29,5 +30,4 @@ install-lazy-vim:
 uninstall-nvim: 
     rm -rf ~/.config/nvim
     rm -rf ~/.local/state/nvim
-    rm -rf ~/.local/share/nvim    
-
+    rm -rf ~/.local/share/nvim
