@@ -92,6 +92,7 @@ path add '($home)/.docker/bin'
 path add $"($nu.home-dir)/.cargo/bin"
 path add $'($home)/.nix-profile/bin/'
 path add $'($home)/.lmstudio/bin'
+path add $'($home)/.npm-global/bin'
 
 $env.XDG_CONFIG_HOME = $'($home)/.config'
 $env.EDITOR = "nvim"
