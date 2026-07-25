@@ -94,6 +94,8 @@ path add $'($home)/.nix-profile/bin/'
 path add $'($home)/.lmstudio/bin'
 path add $'($home)/.npm-global/bin'
 
+path add '/usr/bin'
+path add $'($home)/bin/android-studio/bin'
 $env.XDG_CONFIG_HOME = $'($home)/.config'
 $env.EDITOR = "nvim"
 mkdir ~/.cache/starship
