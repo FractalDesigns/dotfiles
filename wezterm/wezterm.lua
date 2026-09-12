@@ -44,7 +44,7 @@ config.colors = {
 	},
 }
 
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.95
 -- config.color_scheme = "nightfox"
 -- config.color_scheme = 'AdventureTime'
 -- config.color_scheme = 'Advark Blue'

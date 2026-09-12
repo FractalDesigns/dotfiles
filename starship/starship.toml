@@ -8,6 +8,8 @@ right_format = """$all"""
 [directory.substitutions]
 '~/tests/starship-custom' = 'work-project'
 
+[gcloud]
+disabled = true
 
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
